@@ -1,0 +1,21 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "电影",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liyina",
+  "license": "ISC"
+}
