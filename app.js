@@ -3,6 +3,7 @@ var path=require('path')
 var mongoose = require('mongoose')
 var _=require('underscore')
 var Movie=require('./models/movie')
+
 var port = process.env.PORT || 3000
 var app = express();
 var dbUrl = 'mongodb://localhost/movie'
@@ -12,11 +13,11 @@ app.set('view engine','jade')
 var bodyParser= require('body-parser');
 
 // 表单数据格式化
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser());
+
 app.use(express.static(path.join(__dirname,'bower_components')))
-app.listen(port)
-console.log("sdddd")
-app.set("port",3000)
+
 //下面的代码意思是，get请求根目录
 //则调用views文件夹中的index模板，
 //并且传入参数title为“Express”，
@@ -76,8 +77,7 @@ app.get('/admin/new', function (req, res) {
   res.render('admin', {title: '电影-后台录入页', movie: emptyMovie});
 });
 // 逻辑控制:插入
-app.post('/admin/movie/new', function (req, res) {
-	console.log("111")
+app.post('/admin/control/new', function (req, res) {
     var movieObj = req.body.movie;
     var id = movieObj._id;
     var _movie;
@@ -138,3 +138,6 @@ app.get('/admin/control/update/:id', function (req, res) {
         })
     }
 });
+
+app.listen(port)
+console.log("sdddd")
